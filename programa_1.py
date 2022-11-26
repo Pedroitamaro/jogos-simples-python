@@ -9,15 +9,21 @@ print("*********************************\n")
 
 numero_secreto = random.randrange(1, 101) #gerando o numero aleatório
 
-user_input = (input ("\nEm quantas tentativas você quer tentar acertar: ",)) #Imput para definir quantas tentativas o jogador terá
-tentativas = int(user_input)
+user_input = int ( (input ("\nQual nivel de de dificuldade você deseja jogar: (1)Fácil  (2)Intermediário  (3)Dificíl  -> ",))) #Imput para definir quantas tentativas o jogador terá
 
-if(tentativas <= 0): #condição caso o jogador digite um numero de tentativas menor ou igual a zero
-    print ("Você precisa colocar um número maior que 0.")
-    user_input = (input ("\nEm quantas tentativas você quer tentar acertar: ",))
-    tentativas =  int(user_input)
-    
+while (user_input<=0):
+    print("Erro! Por favor selecione um nivel de dificuldade existente")
+    user_input = float ( (input ("\nQual nivel de de dificuldade você deseja jogar: (1)Fácil  (2)Intermediário  (3)Dificíl  -> ",)))
+while (user_input>3):
+    print("Erro! Por favor selecione um nivel de dificuldade existente")
+    user_input = float ( (input ("\nQual nivel de de dificuldade você deseja jogar: (1)Fácil  (2)Intermediário  (3)Dificíl  -> ",)))
 
+if(user_input==1):
+    tentativas = 15
+elif(user_input==2):
+    tentativas = 10
+elif(user_input==1):
+    tentativas = 5
 
 while (tentativas > 0): #Esse laço while faz o jogo rodar enquanto o jogador ainda tiver tentativas disponiveis
     
